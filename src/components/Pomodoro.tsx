@@ -1,9 +1,13 @@
-import IPropsTimer from "../interfaces";
+export default function Pomodoro(props: any) {
+    // Functions
+    function runTimer() {
+        props.setIsRunning(false)
+    }
 
-export default function Pomodoro(props: IPropsTimer) {
     return (
         <>
             <h1>Pomodoro Running</h1>
+            <button type="button" onClick={runTimer}>Início</button>
         </>
     )
 }

@@ -15,8 +15,8 @@ export default function App() {
     <div className="">
       {
         (!isRunning)
-          ? <Home timer={timer} setTimer={setTimer} />
-          : <Pomodoro timer={timer} setTimer={setTimer} />
+          ? <Home timer={timer} setTimer={setTimer} setIsRunning={setIsRunning} />
+          : <Pomodoro timer={timer} setTimer={setTimer} setIsRunning={setIsRunning} />
       }
     </div>
   )
