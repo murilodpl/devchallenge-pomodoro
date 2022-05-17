@@ -1,0 +1,42 @@
+:root {
+    --primaryDark: #333853;
+    --primaryLight: #3C4262;
+    --green: #219653;
+    --yellow: #F2C94C;
+    --white: #9fa1ae;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: var(--white);
+    background: var(--primaryLight);
+}
+
+p {
+    margin: 0;
+}
+
+/* Home */
+.home {
+    text-align: center;
+}
+
+.configTimer {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.configTimer .config {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.configTimer .config div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px 0;
+}
