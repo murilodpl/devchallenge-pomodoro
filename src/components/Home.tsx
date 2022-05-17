@@ -1,3 +1,6 @@
+import arrowDown from "../assets/img/arrow-down.svg"
+import arrowUp from "../assets/img/arrow-up.svg"
+
 export default function Home(props: any) {
     // Functions
     function runTimer() {
@@ -28,8 +31,12 @@ export default function Home(props: any) {
             <div className="configTimer">
                 <div className="config">
                     <div>
-                        <button type="button" name="workTime" value="+" onClick={changeValue}>Up</button>
-                        <button type="button" name="workTime" value="-" onClick={changeValue}>Down</button>
+                        <button type="button" name="workTime" value="+" onClick={changeValue}>
+                            <img width="36px" height="36px" src={arrowUp} alt="Arrow Up" />
+                        </button>
+                        <button type="button" name="workTime" value="-" onClick={changeValue}>
+                            <img width="36px" height="36px" src={arrowDown} alt="Arrow Down" />
+                        </button>
                     </div>
 
                     <div>

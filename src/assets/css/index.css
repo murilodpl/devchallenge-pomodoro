@@ -1,16 +1,15 @@
 :root {
     --primaryDark: #333853;
-    --primaryLight: #3C4262;
+    --primaryLight: #3c4262;
     --green: #219653;
     --yellow: #F2C94C;
-    --white: #9fa1ae;
 }
 
 html, body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    color: var(--white);
-    background: var(--primaryLight);
+    color: #9fa1ae;
+    background: var(--primaryDark);
 }
 
 p {
@@ -24,13 +23,13 @@ p {
 
 .configTimer {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
     justify-content: center;
 }
 
 .configTimer .config {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
 }
@@ -38,5 +37,21 @@ p {
 .configTimer .config div {
     display: flex;
     flex-direction: column;
-    gap: 4px 0;
+    font-weight: 700;
+    gap: .25rem 0;
+}
+
+.configTimer .config div button {
+    border: 0;
+    background: transparent;
+}
+
+.configTimer .config div span {
+    font-size: 5rem;
+    color: #a3a6b5;
+    background: var(--primaryLight);
+    border-radius: 1rem;
+    padding: .5rem;
+    min-width: 7.5rem;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, .5);
 }
