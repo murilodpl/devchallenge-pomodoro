@@ -1,6 +1,6 @@
-import Timer from "../interfaces";
+import IPropsTimer from "../interfaces";
 
-export default function Home(props: { value: Timer }) {
+export default function Home(props: IPropsTimer) {
     return (
         <>
             <h1>Pomodoro</h1>

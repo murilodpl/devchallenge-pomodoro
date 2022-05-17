@@ -1,16 +1,23 @@
 import { useState } from "react"
 import Home from "./components/Home"
+import Pomodoro from "./components/Pomodoro"
 
 export default function App() {
+  // Variables
   const [timer, setTimer] = useState({
     "workTime": 25,
     "breakTime": 3,
     "repeatTime": 3
   })
+  const [isRunning, setIsRunning] = useState(false)
 
   return (
     <div className="">
-      <Home value={timer} />
+      {
+        (!isRunning)
+          ? <Home timer={timer} setTimer={setTimer} />
+          : <Pomodoro timer={timer} setTimer={setTimer} />
+      }
     </div>
   )
 }
