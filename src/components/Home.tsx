@@ -8,21 +8,21 @@ export default function Home(props: any) {
     }
 
     function changeValue(e: any) {
-        const { value, name } = e.target
+        const config = e.target.getAttribute("data-config")
+        const op = e.target.getAttribute("data-op")
 
-        if (value == "+") {
+        if (op == "+") {
             props.setTimer((prevTimer: any) => ({
                 ...prevTimer,
-                [name]: props.timer[name] + 1
+                [config]: props.timer[config] + 1
             }))
-        } else if (props.timer[name] > 0) {
+        } else if (props.timer[config] > 0) {
             props.setTimer((prevTimer: any) => ({
                 ...prevTimer,
-                [name]: props.timer[name] - 1
+                [config]: props.timer[config] - 1
             }))
         }
     }
-
 
     return (
         <section className="home">
@@ -31,11 +31,11 @@ export default function Home(props: any) {
             <div className="configTimer">
                 <div className="config">
                     <div>
-                        <button type="button" name="workTime" value="+" onClick={changeValue}>
-                            <img width="36px" height="36px" src={arrowUp} alt="Arrow Up" />
+                        <button onClick={changeValue} type="button" data-config="workTime" data-op="+">
+                            <img width="36px" height="36px" src={arrowUp} alt="Arrow Up" data-config="workTime" data-op="+" />
                         </button>
-                        <button type="button" name="workTime" value="-" onClick={changeValue}>
-                            <img width="36px" height="36px" src={arrowDown} alt="Arrow Down" />
+                        <button onClick={changeValue} type="button" data-config="workTime" data-op="-">
+                            <img width="36px" height="36px" src={arrowDown} alt="Arrow Down" data-config="workTime" data-op="-" />
                         </button>
                     </div>
 
@@ -44,9 +44,41 @@ export default function Home(props: any) {
                         <p>Trabalho</p>
                     </div>
                 </div>
+
+                <div className="config">
+                    <div>
+                        <button onClick={changeValue} type="button" data-config="breakTime" data-op="+">
+                            <img width="36px" height="36px" src={arrowUp} alt="Arrow Up" data-config="breakTime" data-op="+" />
+                        </button>
+                        <button onClick={changeValue} type="button" data-config="breakTime" data-op="-">
+                            <img width="36px" height="36px" src={arrowDown} alt="Arrow Down" data-config="breakTime" data-op="-" />
+                        </button>
+                    </div>
+
+                    <div>
+                        <span>{props.timer.breakTime}</span>
+                        <p>Pausa</p>
+                    </div>
+                </div>
+
+                <div className="config">
+                    <div>
+                        <button onClick={changeValue} type="button" data-config="repeatTime" data-op="+">
+                            <img width="36px" height="36px" src={arrowUp} alt="Arrow Up" data-config="repeatTime" data-op="+" />
+                        </button>
+                        <button onClick={changeValue} type="button" data-config="repeatTime" data-op="-">
+                            <img width="36px" height="36px" src={arrowDown} alt="Arrow Down" data-config="repeatTime" data-op="-" />
+                        </button>
+                    </div>
+
+                    <div>
+                        <span>{props.timer.repeatTime}</span>
+                        <p>Sessões</p>
+                    </div>
+                </div>
             </div>
 
-            <button type="button" onClick={runTimer}>Continuar</button>
+            <button className="runBtn" type="button" onClick={runTimer}>Continuar</button>
         </section>
     )
 }

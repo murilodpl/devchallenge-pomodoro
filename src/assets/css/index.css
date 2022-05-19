@@ -5,15 +5,39 @@
     --yellow: #F2C94C;
 }
 
+* {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
 html, body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     color: #9fa1ae;
     background: var(--primaryDark);
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home h1 {
+    font-size: 3rem;
+    margin-bottom: 5rem;
 }
 
 p {
     margin: 0;
+}
+
+button {
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: transparent;
 }
 
 /* Home */
@@ -23,13 +47,13 @@ p {
 
 .configTimer {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
 }
 
 .configTimer .config {
     display: flex;
-    gap: 1rem;
+    gap: .25rem;
     justify-content: center;
     align-items: center;
 }
@@ -41,17 +65,38 @@ p {
     gap: .25rem 0;
 }
 
-.configTimer .config div button {
-    border: 0;
-    background: transparent;
-}
-
 .configTimer .config div span {
     font-size: 5rem;
     color: #a3a6b5;
     background: var(--primaryLight);
-    border-radius: 1rem;
+    border-radius: .5rem;
     padding: .5rem;
     min-width: 7.5rem;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.configTimer .config div button:hover {
+    opacity: .8;
+}
+
+.configTimer .config div p {
+    font-size: 1.25rem;
+}
+
+.home .runBtn {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #a3a6b5;
+    background: var(--primaryLight);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    min-width: 15.625rem;
+    box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.5);
+    margin-top: 3rem;
+}
+
+.home .runBtn:hover {
+    background: var(--primaryDark);
+    color: #8f919e;
 }
