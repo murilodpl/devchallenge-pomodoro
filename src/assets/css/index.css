@@ -6,6 +6,7 @@
 }
 
 * {
+    color: #9fa1ae;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
@@ -14,20 +15,12 @@
 html, body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    color: #9fa1ae;
     background: var(--primaryDark);
-    height: 100%;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home h1 {
+h1 {
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin: 0 0 5rem;
 }
 
 p {
@@ -40,11 +33,29 @@ button {
     background: transparent;
 }
 
-/* Home */
-.home {
-    text-align: center;
+@media (min-width: 800px) {
+    .home, .pomodoro {
+        max-width: 750px;
+        width: 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 }
 
+.home, .pomodoro {
+    height: 100vh;
+
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Home */
 .configTimer {
     display: flex;
     gap: 2rem;
@@ -84,19 +95,34 @@ button {
     font-size: 1.25rem;
 }
 
-.home .runBtn {
+.home .runBtn,
+.pomodoro .homeBtn {
     font-size: 2rem;
     font-weight: 700;
     color: #a3a6b5;
     background: var(--primaryLight);
     border-radius: .5rem;
-    padding: 1.5rem;
-    min-width: 15.625rem;
+    padding: 1rem 2.5rem;
     box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.5);
     margin-top: 3rem;
 }
 
-.home .runBtn:hover {
+.home .runBtn:hover,
+.pomodoro .homeBtn:hover {
     background: var(--primaryDark);
     color: #8f919e;
+}
+
+/* Pomodoro Run */
+.pomodoro nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.pomodoro nav h1,
+.pomodoro nav .homeBtn {
+    margin: 0;
 }
